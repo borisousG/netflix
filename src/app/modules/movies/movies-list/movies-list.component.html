@@ -1,0 +1,7 @@
+<div #mainContainer class="movie-main-container" (scroll)="onScroll($event)">
+    <div class="movie-card-container" *ngFor="let movie of movies" style="background-image: url('./assets/img/loading-image.gif');">
+        <mat-card (click)="openDetail(movie)" class="movie-card">
+            <img loading="lazy" mat-card-image [src]="moviesDb.getMovieImage('/w500' + movie.poster_path)" alt="{{ movie.title }}">
+        </mat-card>
+    </div>
+</div>

@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@import "@angular/material/theming";
+@include mat.core();
+$app-primary: mat-palette(mat.$grey-palette, 900);
+$app-accent: mat-palette(mat.$red-palette);
+$app-warn: mat-palette(mat.$yellow-palette);
+$theme-dark: mat-dark-theme($app-primary, $app-accent, $app-warn);
+@include angular-material-theme($theme-dark);
+@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp");
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+}
+
+.mat-dialog-container {
+    padding: 0 !important;
+}
+
+.mat-drawer-inner-container {
+    overflow-x: hidden !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #000;
+    background-color: #000;
+    border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #7f0000;
+    border-radius: 2px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #5c0000;
+}

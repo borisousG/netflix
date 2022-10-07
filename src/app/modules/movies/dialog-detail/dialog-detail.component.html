@@ -1,0 +1,52 @@
+<div class="loading-image" style="background-image: url('./assets/img/loading-image.gif');">
+    <div class="movie-image" [ngStyle]="{ 'background-image' : 'url(' + moviesDb.getMovieImage('/original' + data.backdrop_path) + ')'}">
+        <div class="close-modal">
+            <button mat-icon-button [mat-dialog-close]="data" class="close-button">
+            <mat-icon>close</mat-icon>
+        </button>
+        </div>
+        <div class="movie-title">
+            {{ data.title }}
+        </div>
+    </div>
+</div>
+
+<mat-grid-list cols="2" rowHeight="56px" class="movie-extras">
+    <mat-grid-tile class="vote-average" colspan="1">
+        <span class="green-text">
+            {{ data.vote_average / 10.0 | percent }}
+        </span>
+    </mat-grid-tile>
+    <mat-grid-tile class="release-date" colspan="1">
+        <span>
+            {{ data.release_date | date }}
+        </span>
+    </mat-grid-tile>
+    <mat-grid-tile class="movie-overview" colspan="2" rowspan="3">
+        <span>
+            {{ data.overview }}
+        </span>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<div class="movie-actions">
+    <mat-grid-list cols="6" rowHeight="56px" class="movie-extras">
+        <mat-grid-tile colspan="1">
+            <div class="movie-action no-select" (click)="toggleMyList()">
+                <mat-icon *ngIf="!moviesDb.checkMovieOnList(data.id)">add</mat-icon>
+                <mat-icon *ngIf="moviesDb.checkMovieOnList(data.id)">done</mat-icon>
+                <br>
+                <span>Mi Lista</span>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+            <div class="movie-action no-select" (click)="toggleMyFavorites()">
+                <mat-icon *ngIf="!moviesDb.checkMovieOnFavorites(data.id)" class="material-icons-outlined">thumb_up</mat-icon>
+                <mat-icon *ngIf="moviesDb.checkMovieOnFavorites(data.id)">thumb_up</mat-icon>
+                <br>
+                <span>Votar</span>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="4"></mat-grid-tile>
+    </mat-grid-list>
+</div>

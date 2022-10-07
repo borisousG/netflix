@@ -1,0 +1,39 @@
+.movie-card,
+.movie-card img {
+    padding: 0;
+    width: 200px;
+    height: 300px;
+}
+
+.movie-card {
+    background-color: transparent;
+}
+
+.movie-card img {
+    margin: 0;
+}
+
+.movie-card-container {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 8px;
+    height: 300px;
+    width: 200px;
+    background-color: #000;
+    //float: left;
+    margin: 8px;
+    display: inline-block;
+    opacity: 0.82;
+}
+
+.movie-main-container {
+    height: calc(100vh - 64px);
+    text-align: center;
+    overflow: auto;
+}
+
+.movie-card-container:hover {
+    transform: scale(1.025);
+    opacity: 1;
+}

@@ -1,0 +1,49 @@
+.loading-image {
+    height: 50%;
+    width: 100%;
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #000;
+}
+
+.movie-image {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.close-button {
+    color: #fff;
+    position: absolute;
+    right: 6px;
+    top: 8px;
+}
+
+.movie-title {
+    position: absolute;
+    bottom: 0;
+    height: 56px;
+    background-color: rgb(0 0 0 / 50%);
+    width: calc(100% - 16px);
+    color: #fff;
+    font-size: x-large;
+    padding-top: 16px;
+    padding-left: 16px;
+}
+
+.movie-overview span {
+    padding: 16px !important;
+    text-align: justify;
+}
+
+.movie-action {
+    text-align: center;
+}
+
+.green-text {
+    color: green;
+}
